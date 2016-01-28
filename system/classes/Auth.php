@@ -15,8 +15,8 @@ class Auth
         if (isset($_SESSION['user_id'])) {
             $this->logged_in = TRUE;
             $user = get_first("SELECT *
-                                       FROM users
-                                       WHERE user_id = '{$_SESSION['user_id']}'");
+                                       FROM kasutajad
+                                       WHERE kasutaja_id = '{$_SESSION['user_id']}'");
             $this->load_user_data($user);
 
         }
@@ -39,12 +39,11 @@ class Auth
         if (isset($_POST['username'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $user = get_first("SELECT user_id, is_admin FROM users
-                                WHERE username = '$username'
-                                  AND password = '$password'
-                                  AND  deleted = 0");
-            if (!empty($user['user_id'])) {
-                $_SESSION['user_id'] = $user['user_id'];
+            $user = get_first("SELECT kasutaja_id, is_admin FROM kasutajad
+                                WHERE kasutaja_nimi = '$username'
+                                  AND kasutaja_parool = '$password'");
+            if (!empty($user['kasutaja_id'])) {
+                $_SESSION['user_id'] = $user['kasutaja_id'];
                 $this->load_user_data($user);
                 return true;
             } else {

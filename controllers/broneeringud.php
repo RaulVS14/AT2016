@@ -8,6 +8,7 @@
  */
 class broneeringud extends Controller
 {
+    // public $requires_auth = true;
 
     function index()
     {
@@ -16,14 +17,15 @@ class broneeringud extends Controller
 
     function view()
     {
-
+        $q='SELECT * FROM broneering WHERE Bron_kuup>NOW()';
+        $this->broneeringud=get_all($q);
     }
 
     function index_post()
     {
         $data = $_POST['data'];
-        $q=
-        insert('Broneering',$q);
+
+        // insert('Broneering',$data);
     }
 
     function edit_post()
