@@ -12,7 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/components/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <link href="assets/jquery-ui/jquery-ui.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <style>
@@ -68,6 +68,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="vendor/components/jquery/jquery.min.js"></script>
 <script src="vendor/components/bootstrap/js/bootstrap.min.js"></script>
-<script src="vendor/components/jquery-ui/jquery-ui.js"></script>
+<script src="assets/jquery-ui/jquery-ui.js"></script>
 </body>
 </html>
